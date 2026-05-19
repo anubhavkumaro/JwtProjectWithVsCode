@@ -50,24 +50,7 @@ public class SecurityConfig {
         return http.build();
     }
     
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-
-        return new WebMvcConfigurer() {
-
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-
-                registry.addMapping("/**")
-                        .allowedOrigins(
-                            "https://anubhavkumaro.github.io"
-                        )
-                        .allowedMethods("*")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
-            }
-        };
-    }
+    
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
